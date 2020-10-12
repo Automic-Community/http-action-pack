@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.automic.actions</groupId>
+	<artifactId>http-tool</artifactId>
+	<packaging>jar</packaging>
+	<version>${version}</version>
+	<name>http-tool</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<vendor>Automic Software GmbH</vendor>
+		<version>1.1.5</version>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+		<stagingProfileId>1a30aad100f79e</stagingProfileId>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.48</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope> <!-- not included in final build -->
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.uc4.ara.feature.AraFileCmd</mainClass>
+						</manifest>
+						<manifestSections>
+							<manifestSection>
+								<name>http-tool</name>
+								<manifestEntries>
+									<Application-BuildDate>${timestamp}</Application-BuildDate>
+									<Application-Version>${version}</Application-Version>
+									<Implementation-Vendor>${vendor}</Implementation-Vendor>
+								</manifestEntries>
+							</manifestSection>
+						</manifestSections>
+					</archive>
+					<finalName>http-tool</finalName>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <artifactId>maven-resources-plugin</artifactId> <version>2.7</version>
+				<executions> <execution> <id>copy-resources</id> <phase>validate</phase>
+				<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>${basedir}/target/samples</outputDirectory>
+				<resources> <resource> <directory>src/main/resources/sample</directory> <filtering>true</filtering>
+				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+</project>

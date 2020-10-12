@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBS_GENERIC AttrType="GENERIC" name="PCK.AUTOMIC_HTTP.PRV.JOB.GET@GENERIC">
+<XHEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<Active>1</Active>
+<OH_SubType/>
+<CustomAttributes KeyListID="0" dataRequestID="0"/>
+</XHEADER>
+<OUTPUTREG state="1">
+<FileReg/>
+</OUTPUTREG>
+<SYNCREF state="1">
+<Syncs/>
+</SYNCREF>
+<ATTR_JOBS state="1">
+<Queue>CLIENT_QUEUE</Queue>
+<StartType/>
+<HostDst>|&lt;GENERIC&gt;|HOST</HostDst>
+<HostATTR_Type>GENERIC</HostATTR_Type>
+<CodeName/>
+<Login/>
+<IntAccount/>
+<ExtRepDef>1</ExtRepDef>
+<ExtRepAll>0</ExtRepAll>
+<ExtRepNone>0</ExtRepNone>
+<AutoDeactNo>0</AutoDeactNo>
+<AutoDeact1ErrorFree>0</AutoDeact1ErrorFree>
+<AutoDeactErrorFree>1</AutoDeactErrorFree>
+<DeactWhen>ANY_OK</DeactWhen>
+<DeactDelay>0</DeactDelay>
+<AutoDeactAlways>0</AutoDeactAlways>
+<AttDialog>0</AttDialog>
+<ActAtRun>1</ActAtRun>
+<Consumption>0</Consumption>
+<UC4Priority>0</UC4Priority>
+<MaxParallel2>0</MaxParallel2>
+<MpElse1>1</MpElse1>
+<MpElse2>0</MpElse2>
+<TZ/>
+</ATTR_JOBS>
+<RUNTIME state="1">
+<MaxRetCode>0</MaxRetCode>
+<MrcExecute/>
+<MrcElseE>0</MrcElseE>
+<FcstStatus>0| |</FcstStatus>
+
+<ErtMethodDef>1</ErtMethodDef>
+<ErtMethodFix>0</ErtMethodFix>
+<ErtFix>0</ErtFix>
+<ErtDynMethod>2|Average</ErtDynMethod>
+<ErtMethodDyn>0</ErtMethodDyn>
+<ErtCnt>0</ErtCnt>
+<ErtCorr>0</ErtCorr>
+<ErtIgn>0</ErtIgn>
+<ErtIgnFlg>0</ErtIgnFlg>
+<ErtMinCnt>0</ErtMinCnt>
+<MrtMethodNone>1</MrtMethodNone>
+<MrtMethodFix>0</MrtMethodFix>
+<MrtFix>0</MrtFix>
+<MrtMethodErt>0</MrtMethodErt>
+<MrtErt>0</MrtErt>
+<MrtMethodDate>0</MrtMethodDate>
+<MrtDays>0</MrtDays>
+<MrtTime>00:00</MrtTime>
+<MrtTZ/>
+<SrtMethodNone>1</SrtMethodNone>
+<SrtMethodFix>0</SrtMethodFix>
+<SrtFix>0</SrtFix>
+<SrtMethodErt>0</SrtMethodErt>
+<SrtErt>0</SrtErt>
+<MrtCancel>0</MrtCancel>
+<MrtExecute>0</MrtExecute>
+<MrtExecuteObj/>
+</RUNTIME>
+<DYNVALUES state="1">
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="VALUE">
+<VALUE state="1">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+</dyntree>
+</DYNVALUES>
+<ROLLBACK state="1">
+<RollbackFlag>0</RollbackFlag>
+<CBackupObj/>
+<CRollbackObj/>
+<FBackupPath/>
+<FDeleteBefore>0</FDeleteBefore>
+<FInclSubDirs>0</FInclSubDirs>
+</ROLLBACK>
+<PRE_SCRIPT mode="1" replacementmode="1" state="1">
+<PSCRI><![CDATA[:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.PREPARE_JOB]]></PSCRI>
+</PRE_SCRIPT>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[:INCLUDE PCK.AUTOMIC_HTTP.PRV.INCLUDE.ATTACH
+:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.CHANGE_DIRECTORY_TO_AGENT_BIN
+:SET &UC4RB_CONVERTED_STRING# = &UC4RB_HTTP_SOURCE#
+:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.CONVERT_BACKWARD_TRAILING_SLASH
+:SET &UC4RB_HTTP_SOURCE# = &UC4RB_CONVERTED_STRING#
+
+:SET &UC4RB_CONVERTED_STRING# = &UC4RB_HTTP_TGT_FILES_DIR#
+:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.CONVERT_BACKWARD_TRAILING_SLASH
+:SET &UC4RB_HTTP_TGT_FILES_DIR# = &UC4RB_CONVERTED_STRING#
+
+:SWITCH &$PLATFORM#
+:CASE "WINDOWS"
+:  SET &UC4RB_ESCAPED_STRING# = &UC4RB_HTTP_SOURCE#
+:  INCLUDE PCK.AUTOMIC_HTTP.PRV.INCLUDE.ESCAPE_CHARS_IN_URL@WINDOWS
+:  SET &UC4RB_HTTP_SOURCE# = &UC4RB_ESCAPED_STRING#
+
+:  SET &UC4RB_ESCAPED_STRING# = &UC4RB_HTTP_TGT_FILES_DIR#
+:  INCLUDE PCK.AUTOMIC_HTTP.PRV.INCLUDE.ESCAPE_CHARS_IN_URL@WINDOWS
+:  SET &UC4RB_HTTP_TGT_FILES_DIR# = &UC4RB_ESCAPED_STRING#
+
+:JCL_CONCAT_CHAR "?"
+java -jar "&$AGENT_RESOURCES_CLIENT#http-tool.jar" dirfilehandling GetFiles -prc "&UC4RB_HTTP_PROTOCOL#" ?
+-h "&UC4RB_HTTP_URL#" -p "&UC4RB_HTTP_PORT#" -u "&UC4RB_HTTP_USER#" -pwd "&UC4RB_HTTP_PWD#" ?
+-src "&UC4RB_HTTP_SOURCE#" -tgt "&UC4RB_HTTP_TGT_FILES_DIR#" -o "&UC4RB_HTTP_TGT_OVERWRITE#" ?
+-to "&UC4RB_HTTP_CONNECT_TIMEOUT#" -ph "&UC4RB_HTTP_PROXY_HOST#" -pp "&UC4RB_HTTP_PROXY_PORT#" ?
+-pu "&UC4RB_HTTP_PROXY_USER#" -ppwd "&UC4RB_HTTP_PROXY_PWD#"
+:JCL_CONCAT_CHAR
+
+:  INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.CHECK_CMDLINE_CMD@WINDOWS
+
+:CASE "UNIX"
+:  SET &UC4RB_ESCAPED_STRING# = &UC4RB_HTTP_SOURCE#
+:  INCLUDE PCK.AUTOMIC_HTTP.PRV.INCLUDE.ESCAPE_CHARS_IN_URL@UNIX
+:  SET &UC4RB_HTTP_SOURCE# = &UC4RB_ESCAPED_STRING#
+
+:  SET &UC4RB_ESCAPED_STRING# = &UC4RB_HTTP_TGT_FILES_DIR#
+:  INCLUDE PCK.AUTOMIC_HTTP.PRV.INCLUDE.ESCAPE_CHARS_IN_URL@UNIX
+:  SET &UC4RB_HTTP_TGT_FILES_DIR# = &UC4RB_ESCAPED_STRING#
+
+:JCL_CONCAT_CHAR "?"
+java -jar "&$AGENT_RESOURCES_CLIENT#http-tool.jar" dirfilehandling GetFiles -prc "&UC4RB_HTTP_PROTOCOL#" ?
+-h "&UC4RB_HTTP_URL#" -p "&UC4RB_HTTP_PORT#" -u "&UC4RB_HTTP_USER#" -pwd "&UC4RB_HTTP_PWD#" ?
+-src "&UC4RB_HTTP_SOURCE#" -tgt "&UC4RB_HTTP_TGT_FILES_DIR#" -o "&UC4RB_HTTP_TGT_OVERWRITE#" ?
+-to "&UC4RB_HTTP_CONNECT_TIMEOUT#" -ph "&UC4RB_HTTP_PROXY_HOST#" -pp "&UC4RB_HTTP_PROXY_PORT#" ?
+-pu "&UC4RB_HTTP_PROXY_USER#" -ppwd "&UC4RB_HTTP_PROXY_PWD#"
+:JCL_CONCAT_CHAR
+
+:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.CHECK_SHELL_CMD@UNIX
+
+:OTHER
+:  STOP NOMSG, 50, "Unknown Platform"
+:ENDSWITCH
+]]></MSCRI>
+</SCRIPT>
+<OUTPUTSCAN state="1">
+<Inherit>N</Inherit>
+<filterobjects/>
+<HostFsc/>
+<LoginFsc/>
+</OUTPUTSCAN>
+<POST_SCRIPT mode="1" replacementmode="1" state="1">
+<OSCRI/>
+</POST_SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBS_GENERIC>
+</uc-export>

@@ -1,0 +1,16 @@
+name: PCK.AUTOMIC_HTTP
+source: ae
+binaries:
+  - object: RESOURCES/LIBS/PCK.AUTOMIC_HTTP.PRV.STORE
+    resources: 
+      - name: HTTPTOOL.JAR
+        type: BINARY
+        path: tools/http-tool/target/http-tool.jar
+        version: 1.1.5
+  - object: RESOURCES/PCK.AUTOMIC_HTTP.PRV.CUSTOM_TYPES
+    timestamp: disabled
+    resources:
+      - name: ARTIFACTSOURCE#HTTP
+        type: TEXT
+        path: ara/types/artifact/Artifact_HTTP_1.0.0.xml
+        version: 1.0.0

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArtifactSourceType>
+  <Name>HTTP</Name>
+  <Properties>
+    <Group name="Connection" displayName="Connection" expand="true">
+      <Property name="protocol" displayName="Protocol" mode="MANDATORY" type="SingleChoice">
+        <List>HTTP#;#HTTPS</List>
+        <Defaultvalue>HTTP</Defaultvalue>
+		<Description>Protocol used to communicate with the specified host.</Description>
+      </Property>
+      <Property name="host" displayName="Host" mode="EDITABLE" type="SingleLineText">
+	    <Defaultvalue>127.0.0.1</Defaultvalue>
+        <Description>Host name or IP address. Ex: localhost or 192.168.1.2</Description>
+      </Property>      
+      <Property name="port" displayName="Port" mode="EDITABLE" type="Integer">
+        <Defaultvalue>80</Defaultvalue>
+        <Description>Specify a port number if a non standard port is to be used. Default: 80 (HTTP), 443 (HTTPS)</Description>
+      </Property>
+      <Property name="connection_timeout" displayName="Connection Timeout" mode="EDITABLE" type="Integer">
+		<Description>Connection timeout in milliseconds.</Description>
+        <Defaultvalue>60000</Defaultvalue>
+      </Property> 
+    </Group>
+    <Group name="Credential" displayName="Credential" expand="true">
+      <Property name="username" displayName="Username" mode="EDITABLE" type="SingleLineText">
+        <Description>Username to authenticate with the server (if required by the server)</Description>
+      </Property>
+      <Property name="password" displayName="Password" mode="EDITABLE" type="Protected">
+        <Description>Password to authenticate with the server (if required by the server)</Description>
+      </Property>
+      <Property name="domain" displayName="Domain Name" mode="EDITABLE" type="SingleLineText">
+        <Description>Required if target machine belongs to a windows domain</Description>
+      </Property>
+    </Group>
+    <Group name="Proxy" displayName="Proxy" expand="false">
+      <Property name="proxy_host" displayName="Host" mode="EDITABLE" type="SingleLineText">
+        <Description>Proxy host to use.</Description>
+      </Property>
+      <Property name="proxy_port" displayName="Port" mode="EDITABLE" type="Integer">
+        <Description>Proxy port to use.</Description>
+      </Property>
+      <Property name="proxy_user" displayName="Username" mode="EDITABLE" type="SingleLineText">
+        <Description>Username if proxy requires authentication.</Description>
+      </Property>
+      <Property name="proxy_pwd" displayName="Password" mode="EDITABLE" type="Protected">
+        <Description>Password if proxy requires authentication.</Description>
+      </Property>
+    </Group>
+  </Properties>
+  <Description>Transfer artifact via HTTP/HTTPS</Description>
+  <Artifact>
+    <Properties>
+      <Group name="source" displayName="Source">
+        <Property name="source_path" displayName="Source Path" mode="EDITABLE" type="SingleLineText">
+          <Description>Remote file/directory to be downloaded</Description>
+        </Property>
+		<Property name="checksum_path" displayName="Checksum path" mode="EDITABLE" type="SingleLineText">
+          <Description>Remote artifact checksum file to be downloaded. Checksum file extension in the path must be md5 or sha1 and its name must have same full file name with download file.</Description>
+        </Property>
+		<Property name="archive_type" displayName="Archive Type" mode="EDITABLE" type="SingleChoice">
+          <List>#;#zip#;#tar#;#tar.gz</List>
+        </Property>
+      </Group>	  
+    </Properties>
+  </Artifact>
+</ArtifactSourceType>

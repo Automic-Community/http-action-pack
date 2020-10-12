@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<PRPT name="PCK.AUTOMIC_HTTP.PRV.PROMPTSET.GET">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<PROMPTDESIGNER state="1">
+<DESIGNER/>
+</PROMPTDESIGNER>
+<PROMPTSETXUI state="1">
+<XUIEDITOR><![CDATA[<dialog height="608" icon="PRPT" id="PRPTS" left="0" top="0" width="689"><readpanel fill="b" id="PRPTBOX" nl="1" scroll="v" text="Parameters"><properties><entry name="text">Parameters</entry><entry name="modifiable">0</entry></properties><label fill="b" id="LABEL1s.00" nl="1" text="Source" tooltip="" alt="0">
+      <properties>
+        <entry name="text">Source</entry>
+        <entry name="id">LABEL1s.00</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      </properties>
+    </label><dynradiogroup alt="1" enabled="1" fill="b" focus="" id="UC4RB_HTTP_PROTOCOLs.00" nl="1" text="Protocol" tooltip="Protocol used to communicate with the specified host. (HTTP | HTTPS)" required="0">
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">PCK.AUTOMIC_HTTP.PRV.VARA.PROTOCOLS</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Protocol</entry>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PROTOCOLs.00</entry>
+        <entry name="enabled">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip">Protocol used to communicate with the specified host. (HTTP | HTTPS)</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      <entry name="initvalue"/>
+         </properties>
+    </dynradiogroup><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_URLs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Host" tooltip="Host name or IP address. Example: localhost or 192.168.1.2" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Host</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_URLs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">1</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Host name or IP address. Example: localhost or 192.168.1.2</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_SOURCEs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Path" tooltip="Path to source content" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Path</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_SOURCEs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">1</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Path to source content</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PORTs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Port" tooltip="Specify a port number if a non standard port is to be used. Default: 80 (HTTP), 443 (HTTPS)" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Port</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PORTs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Specify a port number if a non standard port is to be used. Default: 80 (HTTP), 443 (HTTPS)</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_CONNECT_TIMEOUTs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Connection Timeout" tooltip="Maximum waiting time for the source machine to be connected. Default: 5000 ms" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Connection Timeout</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_CONNECT_TIMEOUTs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Maximum waiting time for the source machine to be connected. Default: 5000 ms</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><label fill="b" id="LABEL2s.00" nl="1" text="Basic Authentication" tooltip="" alt="0">
+      <properties>
+        <entry name="text">Basic Authentication</entry>
+        <entry name="id">LABEL2s.00</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      </properties>
+    </label><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_USERs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Username" tooltip="Username to authenticate with the server (if required by the server)" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Username</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_USERs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Username to authenticate with the server (if required by the server)</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PWDs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="1" text="Password" tooltip="Password to authenticate with the server (if required by the server)" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Password</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PWDs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">1</entry>
+        <entry name="tooltip">Password to authenticate with the server (if required by the server)</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><label fill="b" id="LABEL3s.00" nl="1" text="Destination" tooltip="" alt="0">
+      <properties>
+        <entry name="text">Destination</entry>
+        <entry name="id">LABEL3s.00</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      </properties>
+    </label><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_TGT_FILES_DIRs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Target File/Dir" tooltip="Name of a local file/directory where copied file/directory is stored" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Target File/Dir</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_TGT_FILES_DIRs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">1</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Name of a local file/directory where copied file/directory is stored</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><dynradiogroup alt="1" enabled="1" fill="b" focus="" id="UC4RB_HTTP_TGT_OVERWRITEs.00" nl="1" text="Overwrite Files" tooltip="Overwrite local files/directory if exist" required="0">
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">PCK.ITPA_SHARED.PRV.VARA.YES_NO</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Overwrite Files</entry>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_TGT_OVERWRITEs.00</entry>
+        <entry name="enabled">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="tooltip">Overwrite local files/directory if exist</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      <entry name="initvalue"/>
+         </properties>
+    </dynradiogroup><label fill="b" id="LABEL4s.00" nl="1" text="Connect via Proxy" tooltip="" alt="0">
+      <properties>
+        <entry name="text">Connect via Proxy</entry>
+        <entry name="id">LABEL4s.00</entry>
+        <entry name="tooltip"/>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+      </properties>
+    </label><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PROXY_HOSTs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Proxy Host" tooltip="Proxy host if a proxy server is used. Only HTTP proxy server is supported" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Proxy Host</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PROXY_HOSTs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Proxy host if a proxy server is used. Only HTTP proxy server is supported</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PROXY_PORTs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Proxy Port" tooltip="Proxy port if a proxy server is used" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Proxy Port</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PROXY_PORTs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Proxy port if a proxy server is used</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PROXY_USERs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="0" text="Proxy Username" tooltip="Username if proxy requires authentication" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Proxy Username</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PROXY_USERs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">0</entry>
+        <entry name="tooltip">Username if proxy requires authentication</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text><text alt="1" enabled="1" fill="b" focus="0" id="UC4RB_HTTP_PROXY_PWDs.00" inputassistance="0" len="" multiline="0" multilineIcon="0" nl="1" regex="" required="0" separator=";" showaspassword="1" text="Proxy Password" tooltip="Password if proxy requires authentication" upper="0"><oninputassistant><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptname|@id"/><command request="_internal" target="_view" targetaction="setAttribute" targetparam="promptvalue|@value"/><command owner="_promptsetcontainer" owneraction="getData" request="getpromptinputassistance" target="_chainwindow"/></oninputassistant>
+         
+      <properties>
+        <entry listparam="C,N" name="reference" reftype="STATIC">UC_DATATYPE_STRING</entry>
+        <entry name="xmlkey"/>
+        <entry name="xmlpath"/>
+        <entry name="text">Proxy Password</entry>
+        <entry name="multiline">0</entry>
+        <entry name="multilineIcon">0</entry>
+        <entry name="multiselect">0</entry>
+        <entry name="separator">;</entry>
+        <entry name="len"/>
+        <entry name="quotes"/>
+        <entry name="id">UC4RB_HTTP_PROXY_PWDs.00</entry>
+        <entry name="regex"/>
+        <entry name="inputassistance">0</entry>
+        <entry name="enabled">0</entry>
+        <entry name="required">0</entry>
+        <entry name="upper">0</entry>
+        <entry name="focus">0</entry>
+        <entry name="showaspassword">1</entry>
+        <entry name="tooltip">Password if proxy requires authentication</entry>
+        <entry name="modifiable">1</entry>
+        <entry name="customfield"/>
+        <entry name="onchangereset"/>
+        <entry name="resetable">1</entry>
+      <entry name="initvalue"/>
+         </properties>
+    </text></readpanel></dialog>]]></XUIEDITOR>
+</PROMPTSETXUI>
+<PROMPTSETDATA state="1">
+<DATAEDITOR><![CDATA[<PRPTS ontop="1"><PRPTBOX><UC4RB_HTTP_PROTOCOLs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PROTOCOL#" ReadFromTable="OPSE">HTTP</UC4RB_HTTP_PROTOCOLs.00><UC4RB_HTTP_URLs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_URL#" ReadFromTable="OPSE"></UC4RB_HTTP_URLs.00><UC4RB_HTTP_SOURCEs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_SOURCE#" ReadFromTable="OPSE"></UC4RB_HTTP_SOURCEs.00><UC4RB_HTTP_PORTs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PORT#" ReadFromTable="OPSE"></UC4RB_HTTP_PORTs.00><UC4RB_HTTP_CONNECT_TIMEOUTs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_CONNECT_TIMEOUT#" ReadFromTable="OPSE">5000</UC4RB_HTTP_CONNECT_TIMEOUTs.00><UC4RB_HTTP_USERs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_USER#" ReadFromTable="OPSE"></UC4RB_HTTP_USERs.00><UC4RB_HTTP_PWDs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PWD#" ReadFromTable="OPSE"></UC4RB_HTTP_PWDs.00><UC4RB_HTTP_TGT_FILES_DIRs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_TGT_FILES_DIR#" ReadFromTable="OPSE"></UC4RB_HTTP_TGT_FILES_DIRs.00><UC4RB_HTTP_TGT_OVERWRITEs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_TGT_OVERWRITE#" ReadFromTable="OPSE">YES</UC4RB_HTTP_TGT_OVERWRITEs.00><UC4RB_HTTP_PROXY_HOSTs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PROXY_HOST#" ReadFromTable="OPSE"></UC4RB_HTTP_PROXY_HOSTs.00><UC4RB_HTTP_PROXY_PORTs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PROXY_PORT#" ReadFromTable="OPSE"></UC4RB_HTTP_PROXY_PORTs.00><UC4RB_HTTP_PROXY_USERs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PROXY_USER#" ReadFromTable="OPSE"></UC4RB_HTTP_PROXY_USERs.00><UC4RB_HTTP_PROXY_PWDs.00 haslist="0" msgnr="-1" msginsert="" altview="0" promptname="UC4RB_HTTP_PROXY_PWD#" ReadFromTable="OPSE"></UC4RB_HTTP_PROXY_PWDs.00></PRPTBOX></PRPTS>]]></DATAEDITOR>
+</PROMPTSETDATA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</PRPT>
+</uc-export>

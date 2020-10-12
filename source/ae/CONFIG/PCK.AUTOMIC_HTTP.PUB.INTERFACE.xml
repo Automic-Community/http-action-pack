@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<VARA OVD_VRName="FREI" data_type="XML" name="PCK.AUTOMIC_HTTP.PUB.INTERFACE" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>XML</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>XML</lblSource>
+<source>XML</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<XML>
+<Parameters>
+<row Name="interface" Value="&lt;interface&gt;&lt;artifact-transfer&gt;&lt;hooks&gt;&lt;extend-hook condition-value=&quot;HTTP&quot; condition-variable=&quot;&amp;amp;UC4RB_TRANSFER_PROTOCOL#&quot; name=&quot;PCK.AUTOMIC_BOND.HOOK.GET_ARTIFACT.DOWNLOAD&quot;&gt;PCK.AUTOMIC_HTTP.PUB.HOOK.DOWNLOAD_ARTIFACT&lt;/extend-hook&gt;&lt;extend-hook condition-value=&quot;HTTPS&quot; condition-variable=&quot;&amp;amp;UC4RB_TRANSFER_PROTOCOL#&quot; name=&quot;PCK.AUTOMIC_BOND.HOOK.GET_ARTIFACT.DOWNLOAD&quot;&gt;PCK.AUTOMIC_HTTP.PUB.HOOK.DOWNLOAD_ARTIFACT&lt;/extend-hook&gt;&lt;/hooks&gt;&lt;/artifact-transfer&gt;&lt;/interface&gt;"/>
+</Parameters>
+</XML>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+</uc-export>

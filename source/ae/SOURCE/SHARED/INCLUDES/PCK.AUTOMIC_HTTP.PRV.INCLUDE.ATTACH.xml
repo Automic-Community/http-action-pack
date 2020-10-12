@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<JOBI name="PCK.AUTOMIC_HTTP.PRV.INCLUDE.ATTACH">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<SCRIPT mode="1" state="1">
+<MSCRI><![CDATA[:ATTACH_RES "PCK.AUTOMIC_HTTP.PRV.STORE", "HTTPTOOL.JAR", C, N]]></MSCRI>
+</SCRIPT>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</JOBI>
+</uc-export>
