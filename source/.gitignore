@@ -1,9 +1,0 @@
-connection.properties
-
-config.yml
-/tools/http-tool/.settings
-/tools/http-tool/.classpath
-/tools/http-tool/.project
-/tools/http-tool/target
-
-.sonar
