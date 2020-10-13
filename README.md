@@ -17,17 +17,15 @@
 1. Automation Engine should be installed.
 2. Automic Package Manager should be installed.
 3. ITPA Shared Action Pack should be installed. 
+4. Maven
 
 ###### Steps to install action pack source code:
 
 1. Clone the code to your machine.
 2. Go to the package directory.
-3. Run the command apm upload in the directory which contains package.yml (source/):
-4) Run the Maven command in the directory which contains pom.xml : package-dir/tools/pom.xml)
-		a. Java is installed. Reference to install java: https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html
-		b. Maven is installed. reference : https://maven.apache.org/install.html
-
-Ex. **apm upload -force -u <Name>/<Department> -c <Client-id> -H <Host> -pw <Password> -S AUTOMIC -y -ia -ru**
+3. Run the maven command 'mvn clean package' inside the directory containing the pom.xml file.(source/tools/)
+4. Run the command apm upload in the directory which contains package.yml (source/):
+   Ex. apm upload -force -u <Name>/<Department> -c <Client-id> -H <Host> -pw <Password> -S AUTOMIC -y -ia -ru
 
 
 ###### Package/Action Documentation
